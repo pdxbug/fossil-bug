@@ -15,6 +15,9 @@
     font-size: 14px;
     line-height: 27px;
     color: #404041;
+    background:url("../img/28218790_ml.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 a {
@@ -51,29 +54,36 @@ header {
 }
 
 header.row {
-    margin-bottom: 30px;
+    margin: 50px auto;
+    background-color: rgba(256, 256, 256, 0.7);
+    border-radius: 15px;
 }
 
 header .header-image {
-    text-align: center;
-    padding: 64px 0;
+    text-align: right;
+    float: left;
+    width: 40%;
+}
+
+header .header-image img {
+    width: 180px;
+    opacity: 0.5;
 }
 
 header .header-title {
-    padding: 0;
+    padding: 40px 0;
     display: block;
-    background: #404041;
-    text-align: center;
+    text-align: left;
 }
 
 header .header-title h1 {
     font-family: 'Raleway', sans-serif;
     margin: 0;
     font-style: italic;
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 24px;
+    font-weight: 700;
     padding: 18px 30px;
-    color: #DEDED5;
+    color: #000;
 }
 
 header h1 {

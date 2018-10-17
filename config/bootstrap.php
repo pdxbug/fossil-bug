@@ -208,6 +208,11 @@ Type::build('timestamp')
  *
  */
 
+if (Configure::read('debug')) {
+    Configure::write('DebugKit.forceEnable', TRUE);
+    Plugin::load('DebugKit', ['bootstrap' => true, 'routes' => true]);
+}
+
 /*
  * Only try to load DebugKit in development mode
  * Debug Kit should not be installed on a production system
