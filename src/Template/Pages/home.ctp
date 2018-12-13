@@ -97,17 +97,6 @@ $title = 'Home of a Computer Bug | Kerry Mraz';
                     </span>
                 </li>
                 <li class='network-name'>
-                    <span id="serv-button">
-                        <?php echo $this->Html->link(
-                                ' Services',
-                                '/Services',
-                                array('class' => 'fa fa-laptop fa-fw btn btn-default btn-lg',
-                                'style' => 'width:auto;')
-                            );
-                        ?>
-                    </span>
-                </li>
-                <li class='network-name'>
                     <span id="othe-button">
                         <?php echo $this->Html->link(
                                 ' Consultation',
@@ -131,6 +120,11 @@ $title = 'Home of a Computer Bug | Kerry Mraz';
                 </li>
             </ul>
                 <?php Debugger::checkSecurityKeys(); ?>
+            </div>
+        </div>
+        <div id="main-content">
+            <div class="prog">
+                As a profession, I am a PHP web developer. I am currently working for a company that performs every conceivable task for creating, marketing, hosting and completing competative events. From photography, timing, results, SEO and SEM, registration, and much more. My job to is one of many. I work internally within the company to design and maintain tools that help my coworkers to get their jobs done more efficiently. I work with many of the departments on a daily basis to locate and correct bugs in the various systems and to make design updates as requested by the marketing and UI/UX teams. Once in a while, I assist in new functionality of the systems. I will be using this space to showcase my latest projects to provide a reference back and allow others to build from it. 
             </div>
         </div>
     </div><!-- container -->

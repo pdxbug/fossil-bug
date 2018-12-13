@@ -178,6 +178,14 @@ ul li ul, ul li ul li {
     padding: 0;
 }
 
+#main-content div {
+    margin: 20px;
+    background-color: rgba(256, 256, 256, 1);
+    border-radius: 5px;
+    text-align: left;
+    padding: 10px;
+}
+
 .bullet:before {
     font-family: 'cakefont', sans-serif;
     font-size: 18px;

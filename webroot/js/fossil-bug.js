@@ -11,5 +11,7 @@ $(function(){
             $(".home").css('background-image', 'url(img/29504125_ml.jpg)');
             //Copyright: <a href='https://www.123rf.com/profile_nexusplexus'>nexusplexus / 123RF Stock Photo</a>
         }
+        $("div.main-content div").hide();
+        $("div.main-content div."+buttonId).show();
     });
 });
