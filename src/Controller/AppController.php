@@ -16,6 +16,7 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
+use App\Model\Entity\Article;
 
 /**
  * Application Controller
@@ -52,5 +53,21 @@ class AppController extends Controller
          */
         //$this->loadComponent('Security');
         //$this->loadComponent('Csrf');
+    }
+
+    public function beforeRender(Event $event)
+    {
+        if (!empty($this->viewVars['page']) && $this->viewVars['page'] == 'home') {
+            $this->loadModel('Articles');
+
+            $query = $this->Articles->find('all',[
+                'conditions' => [
+                    'published' => 1
+                ]
+            ]);
+            $articles = $query->all();
+
+            $this->set('articles', $articles);
+        }
     }
 }

@@ -69,63 +69,72 @@ $title = 'Home of a Computer Bug | Kerry Mraz';
 </head>
 <body class="home">
     <div class="container">
-
-        <header class="row">
-            <div class="header-image"><?= $this->Html->image('bug_logo.png') ?></div>
-            <div class="header-title">
-                <h1>
-                    Welcome to Fossil-bug Designs<br />
-                    Home of a Computer Bug
-                </h1>
+        <div class="row">
+            <div class="header-image"><?= $this->Html->image('bug_logo.png', ['alt' => 'Image of a computer bug']) ?></div>
+            <div id="main-nav">
+                <div class="columns large-12">
+                    <ul class="list-inline intro-social-buttons">
+                        <li class='network-name'>
+                            <span id="button-welcome">
+                                <?php echo $this->Html->link(
+                                        ' Home',
+                                        '/',
+                                        array('class' => 'fa fa-file-code-o fa-fw btn btn-default btn-lg',
+                                        'style' => 'width:auto;')
+                                    );
+                                ?>
+                            </span>
+                        </li>
+                        <li class='network-name'>
+                            <span id="button-work">
+                                <?php echo $this->Html->link(
+                                        ' Work',
+                                        '/Work',
+                                        array('class' => 'fa fa-file-code-o fa-fw btn btn-default btn-lg',
+                                        'style' => 'width:auto;')
+                                    );
+                                ?>
+                            </span>
+                        </li>
+                        <li class='network-name'>
+                            <span id="button-life">
+                                <?php echo $this->Html->link(
+                                        ' Life',
+                                        '/Life',
+                                        array('class' => 'fa fa-users fa-fw btn btn-default btn-lg',
+                                        'style' => 'width:auto;')
+                                    );
+                                ?>
+                            </span>
+                        </li>
+                        <li class='network-name'>
+                            <span id="button-play">
+                                <?php echo $this->Html->link(
+                                        ' Play',
+                                        '/Play',
+                                        array('class' => 'fa fa-users fa-fw btn btn-default btn-lg',
+                                        'style' => 'width:auto;')
+                                    );
+                                ?>
+                            </span>
+                        </li>
+                    </ul>
+                    <?php Debugger::checkSecurityKeys(); ?>
+                </div>
             </div>
-        </header>
+        </div>
 
         <hr class="intro-divider">
 
-        <div class="row">
-            <div class="columns large-12 text-center">
-                <ul class="list-inline intro-social-buttons">
-                <li class='network-name'>
-                    <span id="prog-button">
-                        <?php echo $this->Html->link(
-                                ' Programming',
-                                '/Programming',
-                                array('class' => 'fa fa-file-code-o fa-fw btn btn-default btn-lg',
-                                'style' => 'width:auto;')
-                            );
-                        ?>
-                    </span>
-                </li>
-                <li class='network-name'>
-                    <span id="othe-button">
-                        <?php echo $this->Html->link(
-                                ' Consultation',
-                                '/Consultation',
-                                array('class' => 'fa fa-users fa-fw btn btn-default btn-lg',
-                                'style' => 'width:auto;')
-                            );
-                        ?>
-                    </span>
-                </li>
-                <li class='network-name'>
-                    <span id="abou-button">
-                        <?php echo $this->Html->link(
-                                ' More',
-                                '/About',
-                                array('class' => 'fa fa-users fa-fw btn btn-default btn-lg',
-                                'style' => 'width:auto;')
-                            );
-                        ?>
-                    </span>
-                </li>
-            </ul>
-                <?php Debugger::checkSecurityKeys(); ?>
-            </div>
-        </div>
         <div id="main-content">
-            <div class="prog">
-                As a profession, I am a PHP web developer. I am currently working for a company that performs every conceivable task for creating, marketing, hosting and completing competative events. From photography, timing, results, SEO and SEM, registration, and much more. My job to is one of many. I work internally within the company to design and maintain tools that help my coworkers to get their jobs done more efficiently. I work with many of the departments on a daily basis to locate and correct bugs in the various systems and to make design updates as requested by the marketing and UI/UX teams. Once in a while, I assist in new functionality of the systems. I will be using this space to showcase my latest projects to provide a reference back and allow others to build from it. 
-            </div>
+            <?php echo $this->element('welcome', ['articles' => $articles]); ?>
+
+            <?php echo $this->element('work'); ?>
+            
+            <?php echo $this->element('life'); ?>
+
+            <?php echo $this->element('play'); ?>
+
         </div>
     </div><!-- container -->
 

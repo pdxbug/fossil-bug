@@ -1,13 +1,19 @@
 $(function(){
+    //initialize content
+
     $('.network-name').hover(function(){
-        var buttonId = $(this).find('span').attr('id').slice(0,4);
-        if (buttonId == 'prog'){
+        var buttonId = $(this).find('span').attr('id').slice(7);
+        $('#main-content div.content').hide();
+        $('#main-content div.content.'+buttonId).show();
+        if (buttonId == 'welcome'){
             $(".home").css('background-image', 'url(img/28218790_ml.jpg)');
-        } else if(buttonId == 'serv'){
-            $(".home").css('background-image', 'url(img/14238282_ml.jpg)');
-        } else if(buttonId == 'othe'){
-            $(".home").css('background-image', 'url(img/30610324_ml.jpg)');
-        } else if(buttonId == 'abou'){
+        } else if (buttonId == 'work'){
+            $(".home").css('background-image', 'url(img/28218790_ml.jpg)');
+        } else if(buttonId == 'life'){
+            $(".home").css('background-image', 'url(img/wedding.jpg)');
+        } else if(buttonId == 'play'){
+            $(".home").css('background-image', 'url(img/bike01.jpg)');
+        } else {
             $(".home").css('background-image', 'url(img/29504125_ml.jpg)');
             //Copyright: <a href='https://www.123rf.com/profile_nexusplexus'>nexusplexus / 123RF Stock Photo</a>
         }

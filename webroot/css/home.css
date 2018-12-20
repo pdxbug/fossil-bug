@@ -18,6 +18,7 @@
     background:url("../img/28218790_ml.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: #0f1d28;
 }
 
 a {
@@ -46,48 +47,15 @@ p {
     line-height: 2;
 }
 
-header {
-    height: auto;
-    line-height: 1em;
-    padding: 0;
-    box-shadow: none;
-}
-
-header.row {
-    margin: 50px auto;
-    background-color: rgba(256, 256, 256, 0.7);
-    border-radius: 15px;
-}
-
-header .header-image {
-    text-align: right;
+div .header-image {
     float: left;
-    width: 40%;
+    width: 20%;
+    padding-left: 40px;
 }
 
-header .header-image img {
-    width: 180px;
-    opacity: 0.5;
-}
-
-header .header-title {
-    padding: 40px 0;
-    display: block;
-    text-align: left;
-}
-
-header .header-title h1 {
-    font-family: 'Raleway', sans-serif;
-    margin: 0;
-    font-style: italic;
-    font-size: 24px;
-    font-weight: 700;
-    padding: 18px 30px;
-    color: #000;
-}
-
-header h1 {
-    color: #fff;
+div .header-image img {
+    width: 90px;
+    opacity: 0.35;
 }
 
 h3, h4 {
@@ -166,7 +134,7 @@ h3, h4 {
 
 ul {
     list-style-type: none;
-    margin: 0 0 30px 0;
+    margin: 10px 0 0 0;
 }
 
 li {
@@ -180,7 +148,7 @@ ul li ul, ul li ul li {
 
 #main-content div {
     margin: 20px;
-    background-color: rgba(256, 256, 256, 1);
+    background-color: rgba(256, 256, 256, .7);
     border-radius: 5px;
     text-align: left;
     padding: 10px;
@@ -242,6 +210,10 @@ hr {
 }
 .icon.training {
     font-size: 39px;
+}
+
+#main-nav {
+    text-align: left;
 }
 
 @media (min-width: 768px) {
