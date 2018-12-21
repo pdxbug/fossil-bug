@@ -48,3 +48,5 @@ nbproject/*
 .vscode
 # Sass preprocessor
 .sass-cache/
+
+./phinx.yml
