@@ -2,7 +2,7 @@
 
 use Phinx\Migration\AbstractMigration;
 
-class MyFirstMigration extends AbstractMigration
+class AddTableUsers extends AbstractMigration
 {
     /**
      * Change Method.
@@ -27,5 +27,19 @@ class MyFirstMigration extends AbstractMigration
      */
     public function change()
     {
+        // create the table
+        $table = $this->table('users', 
+            [
+                'id' => false, 
+                'primary_key' => ['id']
+            ]);
+        $table->addColumn('id', 'char', ['limit' => 36])
+              ->addColumn('email', 'string', ['limit' => 255, 'null' => false])
+              ->addColumn('password', 'string', ['limit' => 255, 'null' => false])
+              ->addColumn('role', 'string', ['limit' => 20, 'null' => false])
+              ->addColumn('created', 'datetime', ['null' => false, 'default' => 'CURRENT_TIMESTAMP'])
+              ->addColumn('modified', 'datetime')
+              ->create();
+
     }
 }

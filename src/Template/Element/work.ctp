@@ -45,5 +45,13 @@
     </ul>
 
 <!-- ToDo blog articles - how tos, example code, etc -->
+    <?php 
+    debug($articles);exit();
+    if (!empty($articles['blog'])) {
+        foreach ($articles as $article) {
+            echo $article->title;
+        } 
+    }
+    ?>
 
 </div>

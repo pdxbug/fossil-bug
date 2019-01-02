@@ -59,13 +59,7 @@ class AppController extends Controller
     {
         if (!empty($this->viewVars['page']) && $this->viewVars['page'] == 'home') {
             $this->loadModel('Articles');
-
-            $query = $this->Articles->find('all',[
-                'conditions' => [
-                    'published' => 1
-                ]
-            ]);
-            $articles = $query->all();
+            $articles = $this->Articles->getArticles();
 
             $this->set('articles', $articles);
         }

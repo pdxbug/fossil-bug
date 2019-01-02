@@ -10,4 +10,16 @@ class ArticlesTable extends Table
     {
         $this->addBehavior('Timestamp');
     }
+
+    public function getArticles()
+    {
+        $query = $this->find('all',[
+            'conditions' => [
+                'published' => 1
+            ]
+        ]);
+        $articles = $query->all();
+
+        return $articles;
+    }
 }
