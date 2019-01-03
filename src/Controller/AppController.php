@@ -61,7 +61,7 @@ class AppController extends Controller
             $this->loadModel('Articles');
             $articles = $this->Articles->getArticles();
 
-            $this->set('articles', $articles);
+            $this->set(compact('articles'));
         }
     }
 }

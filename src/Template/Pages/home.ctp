@@ -46,10 +46,8 @@ $title = 'Home of a Computer Bug | Kerry Mraz';
     <link href="https://fonts.googleapis.com/css?family=Raleway:500i|Roboto:300,400,700|Roboto+Mono" rel="stylesheet">
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script>
-    <?= $this->Html->script('fossil-bug.js') ?>
-
     <script type="text/javascript">
-        <!--//--><![CDATA[//><!--
+         <!--//--><![CDATA[//><!--
             var images = new Array()
             function preload() {
                 for (i = 0; i < preload.arguments.length; i++) {
@@ -64,6 +62,46 @@ $title = 'Home of a Computer Bug | Kerry Mraz';
                 "img/29504125_ml.jpg"
             )
         //--><!]]>
+        $(function(){
+            //initialize content
+            updateBackground('<?php echo $page ?>');
+
+            $('.network-name').hover(function(){
+                var buttonId = $(this).find('span').attr('id').slice(7);
+                updateBackground(buttonId);
+            });
+
+            function updateBackground(buttonId) {
+                var backgroundImages = {
+                    welcome : 'url(img/28218790_ml.jpg)',
+                    work    : 'url(img/28218790_ml.jpg)',
+                    life    : 'url(img/wedding.jpg)',
+                    play    : 'url(img/bike01.jpg)',
+                    else    : 'url(img/29504125_ml.jpg)',
+                    //Copyright: <a href='https://www.123rf.com/profile_nexusplexus'>nexusplexus / 123RF Stock Photo</a>
+                };
+                $('#main-content div.content').hide();
+                $('#main-content div.content.'+buttonId).show();
+                if (buttonId == 'home') {
+                    buttonId = 'welcome';
+                }
+
+                //load background and content depending on button/page loaded
+                if (buttonId == 'welcome'){
+                    $(".home").css('background-image', backgroundImages.welcome);
+                } else if (buttonId == 'work'){
+                    $(".home").css('background-image', backgroundImages.work);
+                } else if(buttonId == 'life'){
+                    $(".home").css('background-image', backgroundImages.life);
+                } else if(buttonId == 'play'){
+                    $(".home").css('background-image', backgroundImages.play);
+                } else {
+                    $(".home").css('background-image', backgroundImages.else);
+                }
+                $("div.main-content div").hide();
+                $("div."+buttonId).show();
+            }
+        });
     </script>
 
 </head>
