@@ -63,7 +63,7 @@ Router::scope('/', function (RouteBuilder $routes) {
      * route to sitemap
      */
 
-    $routes->connect('/sitemap.xml', ['controller' => 'MyController', 'action' => 'sitemap']);
+    $routes->connect('/sitemap.xml', ['controller' => 'App', 'action' => 'sitemap']);
 
     /**
      * Connect catchall routes for all controllers.
