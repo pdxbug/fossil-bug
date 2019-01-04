@@ -60,6 +60,12 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'display']);
 
     /**
+     * route to sitemap
+     */
+
+    $routes->connect('/sitemap.xml', ['controller' => 'MyController', 'action' => 'sitemap']);
+
+    /**
      * Connect catchall routes for all controllers.
      *
      * Using the argument `DashedRoute`, the `fallbacks` method is a shortcut for
